@@ -18,12 +18,14 @@ public class Character_Movement : MonoBehaviour {
 		}
 		return (float)0;
 	}
+
     void OnCollisionStay2D(Collision2D coll)
     {
         if (coll.collider.tag == "Floor") {
             canJump = true;
         }
 	}
+
     void Jump()
     {
         if (canJump == true)
@@ -32,12 +34,14 @@ public class Character_Movement : MonoBehaviour {
             canJump = false;
         }
     }
+
     void run()
     {
         
         Jump();
         GetComponent<Rigidbody2D>().AddForce(new Vector2(moveSpeed, jumpHeight * jump), ForceMode2D.Impulse);
     }
+
 	void FixedUpdate()
 	{
         run();		

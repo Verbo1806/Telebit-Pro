@@ -1,5 +1,10 @@
 Начална документация на проекта
 
+
+
+Линк към файла със задачите по проекта и дневното разпределение на задачите -->
+https://docs.google.com/spreadsheets/d/1jEjpXqO_bBLwI2oTzR-TvraXGSYFcWf5cejCjU_jrio/edit#gid=1799769742
+
 1.  Лого на екипа
  
 2.  Меню

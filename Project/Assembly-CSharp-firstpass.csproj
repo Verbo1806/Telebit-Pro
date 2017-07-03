@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E4E9F207-03E4-F283-7536-DFA8128DDD44}</ProjectGuid>
+    <ProjectGuid>{EB8AA23C-2655-E22B-2EBB-05697394EDB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -61,19 +61,6 @@
      <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsPlatform.cs" />
      <Compile Include="Assets\Standard Assets\UnityAds\Scripts\ShowOptions.cs" />
      <Compile Include="Assets\Standard Assets\UnityAds\Scripts\ShowResult.cs" />
-     <None Include="Assets\Plugins\Android\unityads\res\layout\unityads_view_video_play.xml" />
-     <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
-     <None Include="Assets\Plugins\Android\unityads\build.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\layout\unityads_button_audio_toggle.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\drawable\unityads_background_button_pause.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\drawable\unityads_icon_speaker_triangle.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\values\strings.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\drawable\unityads_icon_speaker_waves.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\drawable\unityads_icon_speaker_base.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\drawable\unityads_icon_play.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\layout\unityads_button_pause.xml" />
-     <None Include="Assets\Plugins\Android\unityads\res\layout\unityads_view_video_paused.xml" />
-     <None Include="Assets\Plugins\Android\unityads\AndroidManifest.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

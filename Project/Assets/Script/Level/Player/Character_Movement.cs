@@ -17,6 +17,8 @@ public class Character_Movement : MonoBehaviour {
     public float flyHeight;
     public int waitTimme;
 
+    public float speedModifyer;
+
     int doublejump;
     bool isDoubleJumping;
 
@@ -30,6 +32,7 @@ public class Character_Movement : MonoBehaviour {
         running = true;
         doublejump = PlayerPrefs.GetInt("DOUBLEJUMP", 0);
         if (doublejump == 1) isDoubleJumping = true;
+        if (PlayerPrefs.GetInt("SPEED", 0) == 1) moveSpeed *= speedModifyer;
     }
 
     protected float OnMouseDown()

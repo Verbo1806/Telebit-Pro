@@ -14,7 +14,7 @@ public class ThornsInstaKill : MonoBehaviour {
 
 		collide = false;
 	}
-	
+
 	void OnCollisionEnter2D(Collision2D col)
 	{
 
@@ -23,7 +23,7 @@ public class ThornsInstaKill : MonoBehaviour {
 			collide = true;
 			myposition = Player.transform.position;
 			Instantiate (Corpse, myposition, Quaternion.identity);
-			Player.transform.position = warpTarget.position;
+			Player.transform.position = CorpseButton.warpTarget_current.position;
 			StartCoroutine(Example());
 		}
 	}

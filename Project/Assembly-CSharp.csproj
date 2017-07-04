@@ -49,6 +49,7 @@
      <Compile Include="Assets\Back.cs" />
      <Compile Include="Assets\Script\Level\Camera_Freeze.cs" />
      <Compile Include="Assets\Script\Level\Flag.cs" />
+     <Compile Include="Assets\Script\Level\FlyButton.cs" />
      <Compile Include="Assets\Script\Level\Level_maker.cs" />
      <Compile Include="Assets\Script\Level\Player\Character_Movement.cs" />
      <Compile Include="Assets\Script\Level\Player\Checkpoint.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Script\Menu\Coins_Menu.cs" />
      <Compile Include="Assets\Script\Upgrades\Exit.cs" />
      <Compile Include="Assets\Script\Upgrades\Timer_Upgrade.cs" />
+     <Compile Include="Assets\Script\Upgrades\UpgradeButton.cs" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>

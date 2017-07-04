@@ -84,6 +84,7 @@
     <Compile Include="Assets\Back.cs" />
     <Compile Include="Assets\Script\Level\Camera_Freeze.cs" />
     <Compile Include="Assets\Script\Level\Flag.cs" />
+    <Compile Include="Assets\Script\Level\FlyButton.cs" />
     <Compile Include="Assets\Script\Level\Level_maker.cs" />
     <Compile Include="Assets\Script\Level\Player\Character_Movement.cs" />
     <Compile Include="Assets\Script\Level\Player\Checkpoint.cs" />

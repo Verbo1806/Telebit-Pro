@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CorpseButton : MonoBehaviour {
+
+	Rigidbody2D Player_rb;
+
 	public GameObject Corpse;
 	public GameObject Player;
 	protected Vector3 myposition;
@@ -17,12 +20,15 @@ public class CorpseButton : MonoBehaviour {
 
 	void Start() {
 
+		Player_rb = Player.GetComponent<Rigidbody2D>();
 		warpTarget_current = warpTarget_default;
 		first_kill = PlayerPrefs.GetInt("DEATH", 0);
 	}
 
 	public void killMe()
 	{
+
+		Player_rb.AddForce(new Vector2(0, Character_Movement.jumpHeight - 350), ForceMode2D.Impulse);
 
 		if (!kill_lock) {
 

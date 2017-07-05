@@ -11,11 +11,13 @@ public class Character_Movement : MonoBehaviour {
 
 
     public float moveSpeed;
-	public float jumpHeight;
+	public static float jumpHeight;
 
     public float flySpeed;
     public float flyHeight;
     public int waitTimme;
+
+    public float speedModifyer;
 
     int doublejump;
     bool isDoubleJumping;
@@ -26,14 +28,19 @@ public class Character_Movement : MonoBehaviour {
 
     private void Start()
     {
+		jumpHeight = 350;
         Player = GetComponent<Rigidbody2D>();
         running = true;
         doublejump = PlayerPrefs.GetInt("DOUBLEJUMP", 0);
         if (doublejump == 1) isDoubleJumping = true;
+        if (PlayerPrefs.GetInt("SPEED", 0) == 1) moveSpeed *= speedModifyer;
     }
 
-    protected float OnMouseDown()
+
+    protected float OnMouseDown_()
 	{
+
+
 		if (Input.GetMouseButtonDown(0))
 		{
 			return (float)1;
@@ -55,7 +62,7 @@ public class Character_Movement : MonoBehaviour {
     {
         if (canJump == true)
         {
-            jump = OnMouseDown();
+            jump = OnMouseDown_();
             canJump = false;
 
             //Debug.Log("canJump");
@@ -63,7 +70,7 @@ public class Character_Movement : MonoBehaviour {
         else if (isDoubleJumping)
         {
             //Debug.Log("isDoubleJumping");
-            jump = OnMouseDown();
+            jump = OnMouseDown_();
             if (jump == (float)1)
             {
                 isDoubleJumping = false;
@@ -78,8 +85,7 @@ public class Character_Movement : MonoBehaviour {
     void run()
     {
         Jump();
-        //Debug.Log("Run");
-        Player.AddForce(new Vector2(moveSpeed, jumpHeight * jump), ForceMode2D.Impulse);
+		Player.AddForce(new Vector2(moveSpeed, (jumpHeight * jump)), ForceMode2D.Impulse);
     }
     IEnumerator Wait(int sec)
     {

@@ -47,22 +47,29 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Back.cs" />
-     <Compile Include="Assets\Script\IAPManager.cs" />
      <Compile Include="Assets\Script\Level\Camera_Freeze.cs" />
      <Compile Include="Assets\Script\Level\Flag.cs" />
      <Compile Include="Assets\Script\Level\FlyButton.cs" />
      <Compile Include="Assets\Script\Level\Level_maker.cs" />
+     <Compile Include="Assets\Script\Level\Obstacles_maker.cs" />
      <Compile Include="Assets\Script\Level\Player\Character_Movement.cs" />
      <Compile Include="Assets\Script\Level\Player\Checkpoint.cs" />
      <Compile Include="Assets\Script\Level\Player\CorpseButton.cs" />
      <Compile Include="Assets\Script\Level\Player\ThornsInstaKill.cs" />
      <Compile Include="Assets\Script\Level\Timer.cs" />
+     <Compile Include="Assets\Script\Login Screen\CreateUser.cs" />
+     <Compile Include="Assets\Script\Login Screen\GetEmail.cs" />
+     <Compile Include="Assets\Script\Login Screen\GetPassword.cs" />
+     <Compile Include="Assets\Script\Login Screen\GetUsername.cs" />
+     <Compile Include="Assets\Script\Login Screen\InformationHolder.cs" />
+     <Compile Include="Assets\Script\Login Screen\InformationInserter.cs" />
      <Compile Include="Assets\Script\Logo\Logo_Change_Scene.cs" />
      <Compile Include="Assets\Script\Menu\Ads\Ads.cs" />
      <Compile Include="Assets\Script\Menu\Buttons\Background_repeat.cs" />
      <Compile Include="Assets\Script\Menu\Buttons\Buttons.cs" />
      <Compile Include="Assets\Script\Menu\Buttons\Earn_Coins.cs" />
      <Compile Include="Assets\Script\Menu\Coins_Menu.cs" />
+     <Compile Include="Assets\Script\Transaction\IAPManager.cs" />
      <Compile Include="Assets\Script\Upgrades\Exit.cs" />
      <Compile Include="Assets\Script\Upgrades\Timer_Upgrade.cs" />
      <Compile Include="Assets\Script\Upgrades\UpgradeButton.cs" />
@@ -93,29 +100,29 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
+ <Reference Include="Editor">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Purchasing.Common">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="Stores">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
+ </Reference>
+ <Reference Include="Apple">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
+ </Reference>
  <Reference Include="FacebookStore">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
  </Reference>
  <Reference Include="Security">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
  </Reference>
- <Reference Include="Purchasing.Common">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
- </Reference>
- <Reference Include="Apple">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
- </Reference>
- <Reference Include="Stores">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
- </Reference>
  <Reference Include="Tizen">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
  </Reference>
  <Reference Include="winrt">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
- </Reference>
- <Reference Include="Editor">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

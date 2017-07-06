@@ -78,29 +78,29 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
+ <Reference Include="Editor">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Purchasing.Common">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="Stores">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
+ </Reference>
+ <Reference Include="Apple">
+ <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
+ </Reference>
  <Reference Include="FacebookStore">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
  </Reference>
  <Reference Include="Security">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
  </Reference>
- <Reference Include="Purchasing.Common">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
- </Reference>
- <Reference Include="Apple">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
- </Reference>
- <Reference Include="Stores">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
- </Reference>
  <Reference Include="Tizen">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
  </Reference>
  <Reference Include="winrt">
  <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
- </Reference>
- <Reference Include="Editor">
- <HintPath>C:/Users/user/Desktop/Telebit-Pro-master/Telebit-Pro-master/Project/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

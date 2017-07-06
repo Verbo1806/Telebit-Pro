@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ThornsInstaKill : MonoBehaviour {
+	
 	public GameObject Corpse;
 	public GameObject Player;
-	public Transform warpTarget;
 	protected Vector3 myposition;
 
 	bool collide;
@@ -13,6 +13,7 @@ public class ThornsInstaKill : MonoBehaviour {
 	void Start () {
 
 		collide = false;
+		Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
 	void OnCollisionEnter2D(Collision2D col)

@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Back.cs" />
      <Compile Include="Assets\Script\Level\Camera_Freeze.cs" />
+     <Compile Include="Assets\Script\Level\Cloud.cs" />
+     <Compile Include="Assets\Script\Level\Clouds_Spawner.cs" />
      <Compile Include="Assets\Script\Level\Flag.cs" />
      <Compile Include="Assets\Script\Level\FlyButton.cs" />
      <Compile Include="Assets\Script\Level\Level_maker.cs" />

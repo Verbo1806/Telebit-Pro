@@ -54,7 +54,7 @@ public class CorpseButton : MonoBehaviour {
 
 	IEnumerator Wait () {
 
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		kill_lock = false;
 	}
 }

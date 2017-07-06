@@ -15,8 +15,6 @@ public class Timer_Upgrade : MonoBehaviour {
 
 	public Text percent;
 
-	public Image bar;
-
 	void Start () {
 
 		have_timer = PlayerPrefs.GetInt("timer_upgrade");
@@ -26,19 +24,19 @@ public class Timer_Upgrade : MonoBehaviour {
 	void Update () {
 
 		if (have_timer == 0) {
-			bar.GetComponent<Image> ().sprite = empty_bar;
+			gameObject.GetComponent<Image> ().sprite = empty_bar;
 			percent.text = "0%";
 		} else if (have_timer == 1) {
-			bar.GetComponent<Image> ().sprite = five_bar;
+			gameObject.GetComponent<Image> ().sprite = five_bar;
 			percent.text = "5%";
 		} else if (have_timer == 2) {
-			bar.GetComponent<Image> ().sprite = ten_bar;
+			gameObject.GetComponent<Image> ().sprite = ten_bar;
 			percent.text = "10%";
 		} else if (have_timer == 3) {
-			bar.GetComponent<Image> ().sprite = fifteen_bar;
+			gameObject.GetComponent<Image> ().sprite = fifteen_bar;
 			percent.text = "15%";
 		} else {
-			bar.GetComponent<Image> ().sprite = full_bar;
+			gameObject.GetComponent<Image> ().sprite = full_bar;
 			percent.text = "20%";
 		}
 	}

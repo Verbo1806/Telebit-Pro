@@ -7,4 +7,9 @@ public class Exit : MonoBehaviour {
 	
 		Application.LoadLevel(1);
 	}
+
+	public void Repeat() {
+
+		Application.LoadLevel(3);
+	}
 }

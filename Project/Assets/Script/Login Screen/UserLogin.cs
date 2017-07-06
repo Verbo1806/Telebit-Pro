@@ -26,7 +26,7 @@ public class UserLogin : MonoBehaviour {
             }
             catch(ArgumentOutOfRangeException e)
             {
-
+                Debug.Log("Non Existant User");
             }
             
         }

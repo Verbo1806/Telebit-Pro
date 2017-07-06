@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.6.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -131,6 +133,7 @@
     <Compile Include="Assets\Script\Login Screen\GetUsername.cs" />
     <Compile Include="Assets\Script\Login Screen\InformationHolder.cs" />
     <Compile Include="Assets\Script\Login Screen\InformationInserter.cs" />
+    <Compile Include="Assets\Script\Login Screen\UserLogin.cs" />
     <Compile Include="Assets\Script\Logo\Logo_Change_Scene.cs" />
     <Compile Include="Assets\Script\Menu\Ads\Ads.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Background_repeat.cs" />

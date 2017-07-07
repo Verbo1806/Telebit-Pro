@@ -6,12 +6,16 @@ using UnityEngine;
 public class InformationHolder : MonoBehaviour {
     public static WWW AccountData;
     public static List<string> tokens;
+    public static bool isConnected = true;
 	IEnumerator Start () {
         tokens = new List<string>();
         AccountData = new WWW("http://localhost/TelebidProject/AccountData.php");
         yield return AccountData;
         string AccDataString = AccountData.text;
-        tokens = AccDataString.Split(';').ToList<string>();
+        if (AccDataString.Contains("Connection failed"))
+            isConnected = false;
+        else 
+            tokens = AccDataString.Split(';').ToList<string>();
         
 	}
 

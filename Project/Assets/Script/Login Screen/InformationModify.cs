@@ -6,16 +6,19 @@ using UnityEngine;
 public class InformationModify : MonoBehaviour {
     static string insertInfoURL = "http://localhost/TelebidProject/ModifyData.php";
 
-    IEnumerator Wait()
+    static IEnumerator Wait()
     {
         yield return InformationHolder.AccountData;
     }
 
-    public void onClick(string name)
+    public static void SendInfo(string name, int value)
     {
         WWWForm form = new WWWForm();
-        form.AddField("ID_cl", Convert.ToInt32(InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "ID:")));
-        form.AddField("name_cl", name);
+        Debug.Log(Convert.ToInt32(InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "ID:")) + name + " : " + value);
+        InformationModify.Wait();
+        form.AddField("ID", Convert.ToInt32(InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "ID:")));
+        form.AddField("name", name);
+        form.AddField("value", value);
         WWW www = new WWW(insertInfoURL, form);
     }
 }

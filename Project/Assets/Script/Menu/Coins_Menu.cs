@@ -13,7 +13,6 @@ public class Coins_Menu : MonoBehaviour {
         try{
             coins = Convert.ToInt32(InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Coins:"));
             coins_text.text = "" + coins;
-            Debug.Log(coins);
         }catch(ArgumentOutOfRangeException e)
         {
 

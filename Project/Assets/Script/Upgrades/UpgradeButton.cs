@@ -1,66 +1,83 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeButton : MonoBehaviour {
     public GameObject button;
-	int coins;
 
+    IEnumerator Wait()
+    {
+        yield return InformationHolder.AccountData;
+    }
 
-	void Update() {
+   
+    void active()
+    {
+        switch (button.tag)
+        {
+            case "Speed":
+                if (Upgrades.speed == 1)
+                    button.SetActive(false);
+                break;
+            case "DoubleJump":
+                if (Upgrades.doubleJump == 1)
+                    button.SetActive(false);
+                break;
+            case "Fly":
+                if (Upgrades.fly == 1)
+                    button.SetActive(false);
+                break;
+            case "Death":
+                if (Upgrades.death == 1)
+                    button.SetActive(false);
+                break;
+        }
+    }
 
-		coins = PlayerPrefs.GetInt ("coin", 0);
-
-		switch(button.tag) {
-		case "Speed":
-			if (PlayerPrefs.GetInt ("SPEED", 0) == 1)
-				button.SetActive (false);
-			break;
-		case "DoubleJump":
-			if (PlayerPrefs.GetInt ("DOUBLEJUMP", 0) == 1)
-				button.SetActive (false);
-			break;
-		case "Fly":
-			if (PlayerPrefs.GetInt ("FLY", 0) == 1)
-				button.SetActive (false);
-			break;
-		case "Death":
-			if (PlayerPrefs.GetInt ("DEATH", 0) == 1)
-				button.SetActive (false);
-			break;
-		}
+    void Update() {
+        active();
 	}
 
     public void ButtonPressed()
     {
         switch(button.tag) {
             case "Speed":
-			if (coins >= 5)
-			coins -= 5;
-			
-                PlayerPrefs.SetInt("SPEED", 1);
+                if (Upgrades.coins >= 5)
+                {
+                    Upgrades.coins -= 5;
+                    Upgrades.speed = 1;
+                }
                 break;
             case "DoubleJump":
-			if (coins >= 5)
-				coins -= 5;
-			
-                PlayerPrefs.SetInt("DOUBLEJUMP", 1);
+                if (Upgrades.coins >= 5)
+                {
+                    Upgrades.coins -= 5;
+                    Upgrades.doubleJump = 1;
+                }
                 break;
             case "Fly":
-			if (coins >= 5)
-				coins -= 5;
-			
-                PlayerPrefs.SetInt("FLY", 1);
+                if (Upgrades.coins >= 5)
+                {
+                    Upgrades.coins -= 5;
+                    Upgrades.fly = 1;
+                }
                 break;
-		case "Death":
-			if (coins >= 5)
-				coins -= 5;
-			
-            	PlayerPrefs.SetInt("DEATH", 1);
-            	break;
-        }
+            case "Death":
+                if (Upgrades.coins >= 5)
+                {
 
-		PlayerPrefs.SetInt ("coin", coins);
-		PlayerPrefs.Save ();
+                    Upgrades.coins -= 5;
+                    Upgrades.death = 1;
+                }
+                break;
+        }
+        Wait();
+        InformationModify.SendInfo("Upgrade_Speed", Upgrades.speed);
+        InformationModify.SendInfo("Upgrade_DoubleJump", Upgrades.doubleJump);
+        InformationModify.SendInfo("Upgrade_Fly", Upgrades.fly);
+        InformationModify.SendInfo("Upgrade_Death", Upgrades.death);
+        InformationModify.SendInfo("Coins", Upgrades.coins);
+
     }
 }

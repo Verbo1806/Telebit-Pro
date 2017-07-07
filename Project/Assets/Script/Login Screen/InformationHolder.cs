@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InformationHolder : MonoBehaviour {
-    public static string[] tokens;
+    public static WWW AccountData;
+    public static List<string> tokens;
+    public static bool isConnected = true;
 	IEnumerator Start () {
-        WWW AccountData = new WWW("http://localhost/TelebidProject/AccountData.php");
+        tokens = new List<string>();
+        AccountData = new WWW("http://localhost/TelebidProject/AccountData.php");
         yield return AccountData;
         string AccDataString = AccountData.text;
-        print(AccDataString);
-        tokens = AccDataString.Split(';');
+        if (AccDataString.Contains("Connection failed"))
+            isConnected = false;
+        else 
+            tokens = AccDataString.Split(';').ToList<string>();
+        
 	}
 
     public static string GetDataValue(string data, string index)

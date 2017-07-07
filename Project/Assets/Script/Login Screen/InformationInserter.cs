@@ -13,8 +13,8 @@ public class InformationInserter : MonoBehaviour {
     public static void CreateUser(string email, string username, string password)
     {
         WWWForm form = new WWWForm();
-        form.AddField("username", username);
         form.AddField("email", email);
+        form.AddField("username", username);
         form.AddField("pass", password);
         form.AddField("coins", 0);
         form.AddField("speed", 0);

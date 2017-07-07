@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Logo_Change_Scene : MonoBehaviour {
 
@@ -13,6 +14,6 @@ public class Logo_Change_Scene : MonoBehaviour {
 	IEnumerator Change_Scene () {
 
 		yield return new WaitForSeconds(seconds);
-		Application.LoadLevel(1);
+		SceneManager.LoadScene(4);
 	}
 }

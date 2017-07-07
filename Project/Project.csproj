@@ -125,12 +125,16 @@
     <Compile Include="Assets\Script\Level\Player\CorpseButton.cs" />
     <Compile Include="Assets\Script\Level\Player\ThornsInstaKill.cs" />
     <Compile Include="Assets\Script\Level\Timer.cs" />
+    <Compile Include="Assets\Script\Login Screen\ChangeUI.cs" />
+    <Compile Include="Assets\Script\Login Screen\CheckUser.cs" />
     <Compile Include="Assets\Script\Login Screen\CreateUser.cs" />
     <Compile Include="Assets\Script\Login Screen\GetEmail.cs" />
     <Compile Include="Assets\Script\Login Screen\GetPassword.cs" />
     <Compile Include="Assets\Script\Login Screen\GetUsername.cs" />
     <Compile Include="Assets\Script\Login Screen\InformationHolder.cs" />
     <Compile Include="Assets\Script\Login Screen\InformationInserter.cs" />
+    <Compile Include="Assets\Script\Login Screen\InformationModify.cs" />
+    <Compile Include="Assets\Script\Login Screen\UserLogin.cs" />
     <Compile Include="Assets\Script\Logo\Logo_Change_Scene.cs" />
     <Compile Include="Assets\Script\Menu\Ads\Ads.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Background_repeat.cs" />
@@ -140,6 +144,7 @@
     <Compile Include="Assets\Script\Upgrades\Exit.cs" />
     <Compile Include="Assets\Script\Upgrades\Timer_Upgrade.cs" />
     <Compile Include="Assets\Script\Upgrades\UpgradeButton.cs" />
+    <Compile Include="Assets\Script\Upgrades\Upgrades.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

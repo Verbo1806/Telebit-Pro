@@ -22,8 +22,8 @@ public class Level_maker : MonoBehaviour {
 	
 		have_timer = PlayerPrefs.GetInt("timer_upgrade");
 
-		level_lenght = Random.Range (4, 6);
-		level_time = level_lenght * 13;
+		level_lenght = Random.Range (6, 8);
+		level_time = level_lenght * 15;
 
 		if (have_timer != 0) {
 			level_time = level_time + (level_time / (5 * have_timer)); 

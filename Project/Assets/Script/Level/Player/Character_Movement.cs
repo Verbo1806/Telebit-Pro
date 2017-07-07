@@ -40,11 +40,12 @@ public class Character_Movement : MonoBehaviour {
     protected float OnMouseDown_()
 	{
 
-
 		if (Input.GetMouseButtonDown(0))
 		{
-			return (float)1;
+			//if (CorpseButton.kill_button_pressed == false)
+				return (float)1;
 		}
+
 		return (float)0;
 	}
 
@@ -77,8 +78,8 @@ public class Character_Movement : MonoBehaviour {
                 jump = (float)0.8;
             }
         }
-        else jump = 0;
-        
+
+        else jump = 0;     
     }
 
 

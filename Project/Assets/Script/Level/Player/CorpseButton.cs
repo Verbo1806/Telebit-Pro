@@ -17,6 +17,7 @@ public class CorpseButton : MonoBehaviour {
 
 
 	public bool kill_lock = false;
+	public static bool kill_button_pressed = false;
 
 	void Start() {
 
@@ -27,7 +28,7 @@ public class CorpseButton : MonoBehaviour {
 
 	public void killMe()
 	{
-
+		kill_button_pressed = true;
 		Player_rb.AddForce(new Vector2(0, Character_Movement.jumpHeight - 350), ForceMode2D.Impulse);
 
 		if (!kill_lock) {
@@ -54,6 +55,7 @@ public class CorpseButton : MonoBehaviour {
 
 	IEnumerator Wait () {
 
+		kill_button_pressed = false;
 		yield return new WaitForSeconds(1);
 		kill_lock = false;
 	}

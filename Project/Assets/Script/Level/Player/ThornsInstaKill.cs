@@ -31,7 +31,7 @@ public class ThornsInstaKill : MonoBehaviour {
 
 	IEnumerator Example() {
 
-		yield return new WaitForSeconds((float)0.1);
+		yield return new WaitForSeconds((float)0.5);
 		collide = false;
 	}
 

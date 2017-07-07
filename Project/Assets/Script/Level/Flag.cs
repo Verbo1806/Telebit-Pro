@@ -31,6 +31,9 @@ public class Flag : MonoBehaviour {
 			game_num++;
 			PlayerPrefs.SetInt("game_num", game_num);
 			coins += 10;
+			if (coins > 999)
+				coins = 999;
+			
 			PlayerPrefs.SetInt("coin", coins);
 			PlayerPrefs.Save();
 

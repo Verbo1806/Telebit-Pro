@@ -132,6 +132,7 @@
     <Compile Include="Assets\Script\Login Screen\GetUsername.cs" />
     <Compile Include="Assets\Script\Login Screen\InformationHolder.cs" />
     <Compile Include="Assets\Script\Login Screen\InformationInserter.cs" />
+    <Compile Include="Assets\Script\Login Screen\InformationModify.cs" />
     <Compile Include="Assets\Script\Login Screen\UserLogin.cs" />
     <Compile Include="Assets\Script\Logo\Logo_Change_Scene.cs" />
     <Compile Include="Assets\Script\Menu\Ads\Ads.cs" />

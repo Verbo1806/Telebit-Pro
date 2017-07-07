@@ -4,13 +4,15 @@ using System.Linq;
 using UnityEngine;
 
 public class InformationHolder : MonoBehaviour {
-    
-    public static List<string> tokens = new List<string>();
+    public static WWW AccountData;
+    public static List<string> tokens;
 	IEnumerator Start () {
-        WWW AccountData = new WWW("http://localhost/TelebidProject/AccountData.php");
+        tokens = new List<string>();
+        AccountData = new WWW("http://localhost/TelebidProject/AccountData.php");
         yield return AccountData;
         string AccDataString = AccountData.text;
         tokens = AccDataString.Split(';').ToList<string>();
+        
 	}
 
     public static string GetDataValue(string data, string index)

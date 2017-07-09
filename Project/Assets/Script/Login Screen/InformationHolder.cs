@@ -9,7 +9,7 @@ public class InformationHolder : MonoBehaviour {
     public static bool isConnected = true;
     public static bool isReady = false;
 
-    IEnumerator getAccounts()
+    public static IEnumerator getAccounts()
     {
         AccountData = new WWW("http://impossible.gear.host/AccountData.php");
         yield return AccountData;

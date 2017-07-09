@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Advertisements;
 
 public class Ads : MonoBehaviour
@@ -9,8 +10,8 @@ public class Ads : MonoBehaviour
 
 	void Update() {
 
-		coins = PlayerPrefs.GetInt ("coin", 0);
-	}
+        coins = Convert.ToInt32(InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Coins:"));
+    }
 
 	public void ShowRewardedAd()
 	{
@@ -31,10 +32,10 @@ public class Ads : MonoBehaviour
 			coins += 10;
 			if (coins > 999)
 				coins = 999;
-
+            InformationModify.SendInfo("Coins", coins);
 			PlayerPrefs.SetInt ("coin", coins);
 			PlayerPrefs.Save ();
-
+            
 			Destroy(button);
 
 			break;

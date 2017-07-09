@@ -8,7 +8,17 @@ public class UpgradeButton : MonoBehaviour {
 
     IEnumerator Wait()
     {
-        yield return InformationHolder.AccountData;
+        StartCoroutine(InformationModify.SendInfo("Upgrade_Speed", Upgrades.speed));
+        StartCoroutine(InformationModify.SendInfo("Upgrade_DoubleJump", Upgrades.doubleJump));
+        StartCoroutine(InformationModify.SendInfo("Upgrade_Fly", Upgrades.fly));
+        StartCoroutine(InformationModify.SendInfo("Upgrade_Death", Upgrades.death));
+        StartCoroutine(InformationModify.SendInfo("Coins", Upgrades.coins));    
+        StartCoroutine(InformationHolder.getAccounts());
+        
+        yield return new WaitUntil(() => InformationHolder.isReady);
+        Upgrades.Information();
+        Upgrades.loadInfo();
+        Debug.Log("made it");
     }
 
    
@@ -72,11 +82,6 @@ public class UpgradeButton : MonoBehaviour {
                 }
                 break;
         }
-        Wait();
-        InformationModify.SendInfo("Upgrade_Speed", Upgrades.speed);
-        InformationModify.SendInfo("Upgrade_DoubleJump", Upgrades.doubleJump);
-        InformationModify.SendInfo("Upgrade_Fly", Upgrades.fly);
-        InformationModify.SendInfo("Upgrade_Death", Upgrades.death);
-        InformationModify.SendInfo("Coins", Upgrades.coins);
+        StartCoroutine(Wait());
     }
 }

@@ -17,8 +17,8 @@ public class Timer_Upgrade : MonoBehaviour {
 
 	void Start () {
 
-		have_timer = PlayerPrefs.GetInt("timer_upgrade");
-		coins = PlayerPrefs.GetInt("coin");
+		have_timer = Upgrades.time;
+		coins = Upgrades.coins;
 	}
 
 	void Update () {
@@ -45,10 +45,12 @@ public class Timer_Upgrade : MonoBehaviour {
 
 		if (coins >= 10 && have_timer < 4) {
 			have_timer++;
+            StartCoroutine(InformationModify.SendInfo("Upgrade_Time", have_timer));
 			PlayerPrefs.SetInt("timer_upgrade", have_timer);
 			PlayerPrefs.Save();
 			coins -= 1;
-			PlayerPrefs.SetInt("coin", coins);
+            InformationModify.SendInfo("Coins", coins   );
+            PlayerPrefs.SetInt("coin", coins);
 			PlayerPrefs.Save();
 		}
 	}

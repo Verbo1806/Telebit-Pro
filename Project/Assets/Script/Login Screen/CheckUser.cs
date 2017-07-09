@@ -8,7 +8,8 @@ public class CheckUser : MonoBehaviour {
     
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2);
+        StartCoroutine(InformationHolder.getAccounts());
+        yield return new WaitUntil(() => InformationHolder.isReady);
 
         if (InformationHolder.isConnected)
         {

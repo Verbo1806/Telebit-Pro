@@ -17,6 +17,7 @@ public class GetEmail : MonoBehaviour {
 
     private void SubmitName(string arg0)
     {
+
         if (arg0.Contains("@"))
             Email = arg0;
         else Email = null;

@@ -78,6 +78,5 @@ public class UpgradeButton : MonoBehaviour {
         InformationModify.SendInfo("Upgrade_Fly", Upgrades.fly);
         InformationModify.SendInfo("Upgrade_Death", Upgrades.death);
         InformationModify.SendInfo("Coins", Upgrades.coins);
-
     }
 }

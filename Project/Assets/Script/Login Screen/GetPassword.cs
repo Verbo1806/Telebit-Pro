@@ -17,6 +17,7 @@ public class GetPassword : MonoBehaviour {
 
     private void SubmitName(string arg0)
     {
+
         Pass = arg0;
     }
 }

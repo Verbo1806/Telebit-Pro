@@ -17,6 +17,7 @@ public class GetUsername : MonoBehaviour {
 
     private void SubmitName(string arg0)
     {
+
         Username = arg0;
     }
 }

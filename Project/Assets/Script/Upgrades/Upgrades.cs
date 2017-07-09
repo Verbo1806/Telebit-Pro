@@ -11,12 +11,12 @@ public class Upgrades : MonoBehaviour
     public static int fly;
     public static int death;
 
-    IEnumerator Wait()
+    static IEnumerator Wait()
     {
         yield return InformationHolder.AccountData;
     }
 
-    void Information()
+    public static void Information()
     {
         try
         {

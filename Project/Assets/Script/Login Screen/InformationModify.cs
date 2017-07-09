@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InformationModify : MonoBehaviour {
-    static string insertInfoURL = "http://localhost/TelebidProject/ModifyData.php";
+    static string insertInfoURL = "http://impossible.gear.host/ModifyData.php";
 
     static IEnumerator Wait()
     {

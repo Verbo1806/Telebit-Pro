@@ -115,11 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Back.cs" />
-    <Compile Include="Assets\Script\IAPManager.cs" />
-    <Compile Include="Assets\Script\Level\Camera_Freeze.cs" />
+    <Compile Include="Assets\Script\Level\Cloud.cs" />
+    <Compile Include="Assets\Script\Level\Clouds_Spawner.cs" />
     <Compile Include="Assets\Script\Level\Flag.cs" />
     <Compile Include="Assets\Script\Level\FlyButton.cs" />
     <Compile Include="Assets\Script\Level\Level_maker.cs" />
+    <Compile Include="Assets\Script\Level\Obstacles_maker.cs" />
     <Compile Include="Assets\Script\Level\Player\Character_Movement.cs" />
     <Compile Include="Assets\Script\Level\Player\Checkpoint.cs" />
     <Compile Include="Assets\Script\Level\Player\CorpseButton.cs" />
@@ -137,10 +138,12 @@
     <Compile Include="Assets\Script\Login Screen\UserLogin.cs" />
     <Compile Include="Assets\Script\Logo\Logo_Change_Scene.cs" />
     <Compile Include="Assets\Script\Menu\Ads\Ads.cs" />
+    <Compile Include="Assets\Script\Menu\Buttons\Accounts.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Background_repeat.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Buttons.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Earn_Coins.cs" />
     <Compile Include="Assets\Script\Menu\Coins_Menu.cs" />
+    <Compile Include="Assets\Script\Transaction\IAPManager.cs" />
     <Compile Include="Assets\Script\Upgrades\Exit.cs" />
     <Compile Include="Assets\Script\Upgrades\Timer_Upgrade.cs" />
     <Compile Include="Assets\Script\Upgrades\UpgradeButton.cs" />

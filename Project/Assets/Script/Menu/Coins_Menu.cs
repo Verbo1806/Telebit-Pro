@@ -11,8 +11,8 @@ public class Coins_Menu : MonoBehaviour {
     void Update()
     {
         try{
-            coins = Convert.ToInt32(InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Coins:"));
-            coins_text.text = "" + coins;
+            
+            coins_text.text = "" + Upgrades.coins;
         }catch(ArgumentOutOfRangeException e)
         {
 

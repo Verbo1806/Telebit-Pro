@@ -4,19 +4,33 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CreateUser : MonoBehaviour {
+    InformationInserter create;
 
-	public void onclick()
+    private void Start()
     {
-        if (GetEmail.Email != null && GetUsername.Username != null && GetPassword.Pass != null)
-        {   
-            
-            InformationInserter.CreateUser(GetEmail.Email, GetUsername.Username, GetPassword.Pass);
+        create = gameObject.AddComponent<InformationInserter>() as InformationInserter;
+    }
+    
+    IEnumerator Wait()
+    {
+        Debug.Log("Waiting for www to download...");
+        yield return new WaitUntil(() => InformationInserter.isready);
+        Debug.Log("Download compleate! :)");
 
-            PlayerPrefs.SetInt("ID", InformationHolder.tokens.Count);
+        SceneManager.LoadSceneAsync(1);
+    }
+        
+    public void onclick()
+    {   
+        if (GetEmail.Email != null && GetUsername.Username != null && GetPassword.Pass != null)
+        {
+            
+            StartCoroutine(create.CreateUser(GetEmail.Email, GetUsername.Username, GetPassword.Pass));
+            PlayerPrefs.SetInt("ID", InformationHolder.tokens.Count -1);
             
             PlayerPrefs.SetString("USERNAME", GetUsername.Username);
             PlayerPrefs.SetString("PASSWORD", GetPassword.Pass);
-            SceneManager.LoadScene(1);
+            StartCoroutine(Wait());
         }
     }
 }

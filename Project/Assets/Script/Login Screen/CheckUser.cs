@@ -5,34 +5,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CheckUser : MonoBehaviour {
-    private void Update()
+    
+    IEnumerator Wait()
     {
+        yield return new WaitForSeconds(2);
+
         if (InformationHolder.isConnected)
         {
-            try
-            {
-                try
-                {
-                    if (InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Username:") == PlayerPrefs.GetString("USERNAME", null))
-                    {
-                        if (InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Password:") == PlayerPrefs.GetString("PASSWORD", null))
-                        {
-                            SceneManager.LoadScene(1);
-                        }
-                    }
-                }
-                catch (ArgumentOutOfRangeException e)
-                {
-                    Debug.Log(e);
-                }
-            }
-            catch (NullReferenceException e)
-            {
-                Debug.Log(e);
-            }
 
+            if (InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Username:") == PlayerPrefs.GetString("USERNAME", null))
+            {
+                if (InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Password:") == PlayerPrefs.GetString("PASSWORD", null))
+                {
+                    SceneManager.LoadScene(1);
+                }
+            }
         }
         else SceneManager.LoadScene(1);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(Wait());
+        
     }    
 }
        

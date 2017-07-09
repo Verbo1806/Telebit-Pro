@@ -7,16 +7,24 @@ public class InformationHolder : MonoBehaviour {
     public static WWW AccountData;
     public static List<string> tokens;
     public static bool isConnected = true;
-	IEnumerator Start () {
-        tokens = new List<string>();
-        AccountData = new WWW("http://localhost/TelebidProject/AccountData.php");
+    public static bool isReady = false;
+
+    IEnumerator getAccounts()
+    {
+        AccountData = new WWW("http://impossible.gear.host/AccountData.php");
         yield return AccountData;
+        isReady = true;
+        Debug.Log(isReady);
         string AccDataString = AccountData.text;
         if (AccDataString.Contains("Connection failed"))
             isConnected = false;
-        else 
+        else
             tokens = AccDataString.Split(';').ToList<string>();
-        
+    }
+
+	void Start () {
+        tokens = new List<string>();
+        StartCoroutine(getAccounts());
 	}
 
     public static string GetDataValue(string data, string index)

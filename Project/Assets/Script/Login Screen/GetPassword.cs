@@ -12,12 +12,11 @@ public class GetPassword : MonoBehaviour {
         var se = new InputField.SubmitEvent();
         se.AddListener(SubmitName);
         input.onEndEdit = se;
-
     }
 
     private void SubmitName(string arg0)
     {
-
         Pass = arg0;
+        
     }
 }

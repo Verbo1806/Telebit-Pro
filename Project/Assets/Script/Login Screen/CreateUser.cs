@@ -17,6 +17,9 @@ public class CreateUser : MonoBehaviour {
         yield return new WaitUntil(() => InformationInserter.isready);
         Debug.Log("Download compleate! :)");
 
+        StartCoroutine(new InformationHolder().Account(GetUsername.Username, GetPassword.Pass));
+        yield return new WaitUntil(() => InformationHolder.isReady);
+
         SceneManager.LoadSceneAsync(1);
     }
         
@@ -24,12 +27,7 @@ public class CreateUser : MonoBehaviour {
     {   
         if (GetEmail.Email != null && GetUsername.Username != null && GetPassword.Pass != null)
         {
-            
             StartCoroutine(create.CreateUser(GetEmail.Email, GetUsername.Username, GetPassword.Pass));
-            PlayerPrefs.SetInt("ID", InformationHolder.tokens.Count -1);
-            
-            PlayerPrefs.SetString("USERNAME", GetUsername.Username);
-            PlayerPrefs.SetString("PASSWORD", GetPassword.Pass);
             StartCoroutine(Wait());
         }
     }

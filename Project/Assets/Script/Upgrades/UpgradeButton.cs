@@ -6,40 +6,30 @@ using UnityEngine;
 public class UpgradeButton : MonoBehaviour {
     public GameObject button;
 
-    IEnumerator Wait()
+    IEnumerator ReloadInfo()
     {
-        StartCoroutine(InformationModify.SendInfo("Upgrade_Speed", Upgrades.speed));
-        StartCoroutine(InformationModify.SendInfo("Upgrade_DoubleJump", Upgrades.doubleJump));
-        StartCoroutine(InformationModify.SendInfo("Upgrade_Fly", Upgrades.fly));
-        StartCoroutine(InformationModify.SendInfo("Upgrade_Death", Upgrades.death));
-        StartCoroutine(InformationModify.SendInfo("Coins", Upgrades.coins));    
-        StartCoroutine(InformationHolder.getAccounts());
-        
+        StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, InformationHolder.AccountData.Password));
         yield return new WaitUntil(() => InformationHolder.isReady);
-        Upgrades.Information();
-        Upgrades.loadInfo();
-        Debug.Log("made it");
     }
 
-   
     void active()
     {
         switch (button.tag)
         {
             case "Speed":
-                if (Upgrades.speed == 1)
+                if (InformationHolder.AccountData.Upgrade_Speed == 1)
                     button.SetActive(false);
                 break;
             case "DoubleJump":
-                if (Upgrades.doubleJump == 1)
+                if (InformationHolder.AccountData.Upgrade_DoubleJump == 1)
                     button.SetActive(false);
                 break;
             case "Fly":
-                if (Upgrades.fly == 1)
+                if (InformationHolder.AccountData.Upgrade_Fly == 1)
                     button.SetActive(false);
                 break;
             case "Death":
-                if (Upgrades.death == 1)
+                if (InformationHolder.AccountData.Upgrade_Death == 1)
                     button.SetActive(false);
                 break;
         }
@@ -49,39 +39,64 @@ public class UpgradeButton : MonoBehaviour {
         active();
 	}
 
+
+    IEnumerator Speed()
+    {
+        if (InformationHolder.AccountData.Coins >= 5)
+        {
+            StartCoroutine(new InformationModify().SendInfo("Coins", InformationHolder.AccountData.Coins - 5));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(new InformationModify().SendInfo("Upgrade_Speed", 1));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+        }
+    }
+    IEnumerator Fly()
+    {
+        if (InformationHolder.AccountData.Coins >= 5)
+        {
+            StartCoroutine(new InformationModify().SendInfo("Coins", InformationHolder.AccountData.Coins - 5));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(new InformationModify().SendInfo("Upgrade_Fly", 1));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+        }
+    }
+    IEnumerator DoubleJump()
+    {
+        if (InformationHolder.AccountData.Coins >= 5)
+        {
+            StartCoroutine(new InformationModify().SendInfo("Coins", InformationHolder.AccountData.Coins - 5));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(new InformationModify().SendInfo("Upgrade_DoubleJump", 1));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+        }
+    }
+    IEnumerator Death()
+    {
+        if (InformationHolder.AccountData.Coins >= 5)
+        {
+            StartCoroutine(new InformationModify().SendInfo("Coins", InformationHolder.AccountData.Coins - 5));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(new InformationModify(). SendInfo("Upgrade_Death", 1));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+        }
+    }
     public void ButtonPressed()
     {
         switch(button.tag) {
             case "Speed":
-                if (Upgrades.coins >= 5)
-                {
-                    Upgrades.coins -= 5;
-                    Upgrades.speed = 1;
-                }
+                StartCoroutine(Speed());
                 break;
             case "DoubleJump":
-                if (Upgrades.coins >= 5)
-                {
-                    Upgrades.coins -= 5;
-                    Upgrades.doubleJump = 1;
-                }
+                StartCoroutine(DoubleJump());
                 break;
             case "Fly":
-                if (Upgrades.coins >= 5)
-                {
-                    Upgrades.coins -= 5;
-                    Upgrades.fly = 1;
-                }
+                StartCoroutine(Fly());
                 break;
             case "Death":
-                if (Upgrades.coins >= 5)
-                {
-
-                    Upgrades.coins -= 5;
-                    Upgrades.death = 1;
-                }
+                StartCoroutine(Death());
                 break;
         }
-        StartCoroutine(Wait());
+        ReloadInfo();
     }
+
 }

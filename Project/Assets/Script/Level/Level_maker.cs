@@ -28,8 +28,7 @@ public class Level_maker : MonoBehaviour {
 		if (have_timer != 0) {
 			level_time = level_time + (level_time / (5 * have_timer)); 
 			have_timer = 0;
-			PlayerPrefs.SetInt("timer_upgrade", have_timer);
-			PlayerPrefs.Save();
+            StartCoroutine(new InformationModify().SendInfo("Upgrade_Time", have_timer));
 		}
 
 		//terrain_02 = (GameObject) Resources.Load("Terrain_02");

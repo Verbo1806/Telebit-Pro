@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -10,7 +11,7 @@ public class Ads : MonoBehaviour
 
 	void Update() {
 
-        coins = Convert.ToInt32(InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Coins:"));
+        coins = InformationHolder.AccountData.Coins;
     }
 
 	public void ShowRewardedAd()
@@ -22,21 +23,23 @@ public class Ads : MonoBehaviour
 		}
 	}
 
+    IEnumerator Modify()
+    {
+        StartCoroutine(new InformationModify().SendInfo("Coins", coins));
+        yield return new WaitUntil(() => InformationModify.sentinfo);
+    }
+
 	private void HandleShowResult(ShowResult result)
 	{
 		switch (result)
 		{
 		case ShowResult.Finished:
 			Debug.Log ("The ad was successfully shown.");
-
 			coins += 10;
 			if (coins > 999)
 				coins = 999;
-            InformationModify.SendInfo("Coins", coins);
-			PlayerPrefs.SetInt ("coin", coins);
-			PlayerPrefs.Save ();
-            
-			Destroy(button);
+            StartCoroutine(Modify());
+            Destroy(button);
 
 			break;
 		case ShowResult.Skipped:

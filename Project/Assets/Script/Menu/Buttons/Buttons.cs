@@ -12,7 +12,6 @@ public class Buttons : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Upgrade () {
-        if(InformationHolder.isConnected)
-		    SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
 	}
 }

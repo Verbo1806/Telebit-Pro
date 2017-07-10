@@ -129,6 +129,7 @@
     <Compile Include="Assets\Script\Login Screen\ChangeUI.cs" />
     <Compile Include="Assets\Script\Login Screen\CheckUser.cs" />
     <Compile Include="Assets\Script\Login Screen\CreateUser.cs" />
+    <Compile Include="Assets\Script\Login Screen\GetAccount.cs" />
     <Compile Include="Assets\Script\Login Screen\GetEmail.cs" />
     <Compile Include="Assets\Script\Login Screen\GetPassword.cs" />
     <Compile Include="Assets\Script\Login Screen\GetUsername.cs" />
@@ -139,7 +140,6 @@
     <Compile Include="Assets\Script\Logo\Logo_Change_Scene.cs" />
     <Compile Include="Assets\Script\Menu\Ads\Ads.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Accounts.cs" />
-    <Compile Include="Assets\Script\Menu\Buttons\Background_repeat.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Buttons.cs" />
     <Compile Include="Assets\Script\Menu\Buttons\Earn_Coins.cs" />
     <Compile Include="Assets\Script\Menu\Coins_Menu.cs" />

@@ -6,30 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class UserLogin : MonoBehaviour {
 
+    IEnumerator Login()
+    {
+        InformationHolder acc = new InformationHolder();
+        StartCoroutine(acc.Account(GetUsername.Username, GetPassword.Pass));
+        yield return new WaitUntil(() => InformationHolder.isReady);
+        if (InformationHolder.AccountData.Username != null && InformationHolder.AccountData.Password != null)
+            SceneManager.LoadScene(1);
+    }
+
     public void onClick()
     {
-        for (int counter = 0; counter < InformationHolder.tokens.Count; counter++)
-        {
-            try
-            {
-                if (GetUsername.Username == InformationHolder.GetDataValue(InformationHolder.tokens[counter], "Username:"))
-                {
-                    if (GetPassword.Pass == InformationHolder.GetDataValue(InformationHolder.tokens[counter], "Password:"))
-                    {
-                        PlayerPrefs.SetInt("ID", counter + 1);
-                        PlayerPrefs.SetString("USERNAME", InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Username:"));
-                        PlayerPrefs.SetString("PASSWORD", InformationHolder.GetDataValue(InformationHolder.tokens[PlayerPrefs.GetInt("ID") - 1], "Password:"));
-                        SceneManager.LoadScene(1);
-                    }
-                    break;
-                }
-            }
-            catch(ArgumentOutOfRangeException e)
-            {
-                Debug.Log("Non Existant User");
-            }
-            
-        }
-    }
-    
+        StartCoroutine(Login());
+    }    
 }

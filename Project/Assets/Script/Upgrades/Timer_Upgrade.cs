@@ -17,8 +17,8 @@ public class Timer_Upgrade : MonoBehaviour {
 
 	void Start () {
 
-		have_timer = Upgrades.time;
-		coins = Upgrades.coins;
+        have_timer = InformationHolder.AccountData.Upgrade_Time;
+		coins = InformationHolder.AccountData.Coins;
 	}
 
 	void Update () {
@@ -41,17 +41,22 @@ public class Timer_Upgrade : MonoBehaviour {
 		}
 	}
 
-	public void Timer () {
+    IEnumerator UpgradeTime()
+    {
+        if (coins >= 10 && have_timer < 4)
+        {
+            Debug.Log("In");
+            have_timer++;
+            StartCoroutine(new InformationModify().SendInfo("Upgrade_Time", have_timer));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+            coins -= 1;
+            StartCoroutine(new InformationModify().SendInfo("Coins", coins));
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+            Debug.Log("out");
+        }
+    }
 
-		if (coins >= 10 && have_timer < 4) {
-			have_timer++;
-            StartCoroutine(InformationModify.SendInfo("Upgrade_Time", have_timer));
-			PlayerPrefs.SetInt("timer_upgrade", have_timer);
-			PlayerPrefs.Save();
-			coins -= 1;
-            InformationModify.SendInfo("Coins", coins   );
-            PlayerPrefs.SetInt("coin", coins);
-			PlayerPrefs.Save();
-		}
+	public void Timer () {
+        StartCoroutine(UpgradeTime());
 	}
 }

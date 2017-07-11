@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Flag : MonoBehaviour {
 
@@ -44,6 +45,6 @@ public class Flag : MonoBehaviour {
 	IEnumerator Change_Scene () {
 
 		yield return new WaitForSeconds(wait_seconds);
-		Application.LoadLevel(1);
+		SceneManager.LoadScene(1);
 	}
 }

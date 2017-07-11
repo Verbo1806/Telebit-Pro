@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GetEmail : MonoBehaviour {
     public static string Email = null;
+	public static bool email_error = false;
 
     void Start()
     {
@@ -18,8 +19,13 @@ public class GetEmail : MonoBehaviour {
     private void SubmitName(string arg0)
     {
 
-        if (arg0.Contains("@"))
-            Email = arg0;
-        else Email = null;
+		if (arg0.Contains ("@")) {
+			Email = arg0;
+			email_error = false;
+		}
+		else {
+			Email = null;
+			email_error = true;
+		}
     }
 }

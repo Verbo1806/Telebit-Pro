@@ -1,12 +1,22 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Level\Player\CorpseButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Login Screen\UserLogin.cs">
     <Files>
       <File FileName="Assets\Script\Level\Player\Checkpoint.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Level\Player\ThornsInstaKill.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Level\Level_maker.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Level\Player\Character_Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Level\Player\CorpseButton.cs" Line="49" Column="4" />
+      <File FileName="Assets\Script\Level\Player\CorpseButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Login Screen\InformationModify.cs" Line="20" Column="26" />
+      <File FileName="Assets\Script\Login Screen\InformationInserter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Login Screen\ChangeUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Login Screen\GetEmail.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Login Screen\CheckUser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Login Screen\CreateUser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Login Screen\UserLogin.cs" Line="24" Column="31" />
+      <File FileName="Assets\Script\Login Screen\InformationHolder.cs" Line="22" Column="3" />
+      <File FileName="Assets\Script\Login Screen\GetAccount.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Level\Timer.cs" Line="4" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

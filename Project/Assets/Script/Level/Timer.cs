@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class Timer : MonoBehaviour {
@@ -47,6 +48,6 @@ public class Timer : MonoBehaviour {
 		game_num++;
 		PlayerPrefs.SetInt("game_num", game_num);
 		PlayerPrefs.Save();
-		Application.LoadLevel(1);
+		SceneManager.LoadScene(1);
 	}
 }

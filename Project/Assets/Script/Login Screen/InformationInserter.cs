@@ -8,6 +8,7 @@ public class InformationInserter : MonoBehaviour {
     static string insertInfoURL = "http://impossible.gear.host/InsertData.php";
 
     public static bool isready;
+	public static string reg_error;
     
     public IEnumerator CreateUser(string email, string username, string password)
     {
@@ -24,6 +25,7 @@ public class InformationInserter : MonoBehaviour {
         form.AddField("fly", 0);
         WWW www = new WWW(insertInfoURL, form);
         yield return www;
+		reg_error = www.text;
         isready = true;
         if (!string.IsNullOrEmpty(www.error))
         {

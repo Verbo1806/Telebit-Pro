@@ -12,6 +12,12 @@ public class ChangeUI : MonoBehaviour {
     public GameObject Register_Button;
     public GameObject Login_Swap;
     public GameObject Register_Swap;
+	public GameObject Pop_Up;
+
+	public void Start() {
+
+		Pop_Up.SetActive (false);
+	}
 
 
     public void onClick()

@@ -7,6 +7,7 @@ public class InformationHolder : MonoBehaviour
 
     public static GetAccount AccountData;
     public static bool isReady;
+	public static string login_error;
 
     public IEnumerator Account(string usr, string pass)
     {
@@ -17,6 +18,8 @@ public class InformationHolder : MonoBehaviour
         form.AddField("pass", pass);
         WWW www = new WWW(insertInfoURL, form);
         yield return www;
+		login_error = www.text;
+
         GetAccount Account = new GetAccount();
         AccountData = Account.Download(www);
         PlayerPrefs.SetString("USERNAME", usr);

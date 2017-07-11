@@ -18,8 +18,8 @@ public class InformationModify : MonoBehaviour {
         form.AddField("value", value);
         WWW www = new WWW(insertInfoURL, form);
         yield return www;
-        InformationHolder acc = new InformationHolder();
-        StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
-        sentinfo = true;
+        new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null));
+		yield return new WaitUntil (() => InformationHolder.isReady);
+		sentinfo = true;
     }
 }

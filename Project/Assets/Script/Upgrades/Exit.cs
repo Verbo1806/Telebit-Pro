@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour {
 	
 	public void Change_Scene() {
 	
-		Application.LoadLevel(1);
+		SceneManager.LoadScene(1);
 	}
 
 	public void Repeat() {
 
-		Application.LoadLevel(3);
+		SceneManager.LoadScene(3);
 	}
 }

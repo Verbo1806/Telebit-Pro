@@ -23,7 +23,6 @@ public class InformationHolder : MonoBehaviour
         GetAccount Account = new GetAccount();
         AccountData = Account.Download(www);
         PlayerPrefs.SetString("USERNAME", usr);
-        PlayerPrefs.SetString("PASSWORD", pass);
         isReady = true;
     }
 

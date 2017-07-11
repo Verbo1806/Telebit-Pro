@@ -8,6 +8,7 @@ public class InformationModify : MonoBehaviour {
     public static bool sentinfo = false;
     
     
+
     
 
     public IEnumerator SendInfo(string name, int value)

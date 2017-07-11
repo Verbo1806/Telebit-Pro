@@ -8,7 +8,7 @@ public class UpgradeButton : MonoBehaviour {
 
     IEnumerator ReloadInfo()
     {
-        StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, InformationHolder.AccountData.Password));
+        StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD")));
         yield return new WaitUntil(() => InformationHolder.isReady);
     }
 
@@ -48,6 +48,7 @@ public class UpgradeButton : MonoBehaviour {
             yield return new WaitUntil(() => InformationModify.sentinfo);
             StartCoroutine(new InformationModify().SendInfo("Upgrade_Speed", 1));
             yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(ReloadInfo());
         }
     }
     IEnumerator Fly()
@@ -58,6 +59,7 @@ public class UpgradeButton : MonoBehaviour {
             yield return new WaitUntil(() => InformationModify.sentinfo);
             StartCoroutine(new InformationModify().SendInfo("Upgrade_Fly", 1));
             yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(ReloadInfo());
         }
     }
     IEnumerator DoubleJump()
@@ -68,6 +70,7 @@ public class UpgradeButton : MonoBehaviour {
             yield return new WaitUntil(() => InformationModify.sentinfo);
             StartCoroutine(new InformationModify().SendInfo("Upgrade_DoubleJump", 1));
             yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(ReloadInfo());
         }
     }
     IEnumerator Death()
@@ -78,6 +81,9 @@ public class UpgradeButton : MonoBehaviour {
             yield return new WaitUntil(() => InformationModify.sentinfo);
             StartCoroutine(new InformationModify(). SendInfo("Upgrade_Death", 1));
             yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(ReloadInfo());
+
+
         }
     }
     public void ButtonPressed()
@@ -96,7 +102,6 @@ public class UpgradeButton : MonoBehaviour {
                 StartCoroutine(Death());
                 break;
         }
-        ReloadInfo();
     }
 
 }

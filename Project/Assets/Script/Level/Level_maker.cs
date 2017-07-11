@@ -17,8 +17,10 @@ public class Level_maker : MonoBehaviour {
 	static public float level_time; 
 	int have_timer;
 
+
+
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
 	
 		have_timer = PlayerPrefs.GetInt("timer_upgrade");
 
@@ -29,7 +31,10 @@ public class Level_maker : MonoBehaviour {
 			level_time = level_time + (level_time / (5 * have_timer)); 
 			have_timer = 0;
             StartCoroutine(new InformationModify().SendInfo("Upgrade_Time", have_timer));
-		}
+            yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
+            yield return new WaitUntil(() => InformationHolder.isReady);
+        }
 
 		//terrain_02 = (GameObject) Resources.Load("Terrain_02");
 	}

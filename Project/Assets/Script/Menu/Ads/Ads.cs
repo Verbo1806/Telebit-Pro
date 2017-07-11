@@ -27,6 +27,12 @@ public class Ads : MonoBehaviour
     {
         StartCoroutine(new InformationModify().SendInfo("Coins", coins));
         yield return new WaitUntil(() => InformationModify.sentinfo);
+        StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
+        yield return new WaitUntil(() => InformationHolder.isReady);
+
+        Debug.Log("The ad was successfully shown.");
+
+        Destroy(button);
     }
 
 	private void HandleShowResult(ShowResult result)
@@ -39,7 +45,6 @@ public class Ads : MonoBehaviour
 			if (coins > 999)
 				coins = 999;
             StartCoroutine(Modify());
-            Destroy(button);
 
 			break;
 		case ShowResult.Skipped:

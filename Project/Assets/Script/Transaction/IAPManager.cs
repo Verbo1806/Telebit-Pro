@@ -147,7 +147,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
 			if (coins > 999)
 				coins = 999;
             StartCoroutine(new InformationModify().SendInfo("Coins", coins));
-		}
+
+            StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
+        }
 			// Or ... a non-consumable product has been purchased by this user.
 		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_500_GOLD, StringComparison.Ordinal))
 			{
@@ -156,7 +158,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
 			    if (coins > 999)
 				    coins = 999;
                 StartCoroutine(new InformationModify().SendInfo("Coins", coins));
-			}
+                StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
+        }
 			// Or ... a subscription product has been purchased by this user.
 		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_999_GOLD, StringComparison.Ordinal))
 			{
@@ -165,6 +168,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
 			if (coins > 999)
 				coins = 999;
             StartCoroutine(new InformationModify().SendInfo("Coins", coins));
+            StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
         }
 			// Or ... an unknown product has been purchased by this user. Fill in additional products here....
 			else 

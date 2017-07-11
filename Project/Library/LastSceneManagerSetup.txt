@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Level.unity
-=======
-- path: Assets/Scenes/Login Screen.unity
->>>>>>> Reload
+- path: Assets/Scenes/Logo.unity
   isLoaded: 1
   isActive: 1

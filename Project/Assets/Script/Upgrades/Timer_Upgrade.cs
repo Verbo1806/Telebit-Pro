@@ -52,6 +52,8 @@ public class Timer_Upgrade : MonoBehaviour {
             coins -= 1;
             StartCoroutine(new InformationModify().SendInfo("Coins", coins));
             yield return new WaitUntil(() => InformationModify.sentinfo);
+            StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
+            yield return new WaitUntil(() => InformationHolder.isReady);
             Debug.Log("out");
         }
     }

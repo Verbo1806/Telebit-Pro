@@ -17,8 +17,9 @@ public class UserLogin : MonoBehaviour {
 
 		try {
 			if (InformationHolder.AccountData.Username != null && InformationHolder.AccountData.Password != null) {
-				
-				SceneManager.LoadScene (1);
+                PlayerPrefs.SetString("PASSWORD", GetPassword.Pass);
+
+                SceneManager.LoadScene (1);
 			}
 		}
 		catch(NullReferenceException) {

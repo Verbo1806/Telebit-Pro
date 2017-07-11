@@ -34,17 +34,16 @@ public class Flag : MonoBehaviour {
 			coins += 10;
 			if (coins > 999)
 				coins = 999;
-			
-			PlayerPrefs.SetInt("coin", coins);
-			PlayerPrefs.Save();
-
+            
 			StartCoroutine(Change_Scene());
 		}
 	}
 
 	IEnumerator Change_Scene () {
-
-		yield return new WaitForSeconds(wait_seconds);
+        StartCoroutine(new InformationModify().SendInfo("Coins", coins));
+        yield return new WaitUntil(() => InformationModify.sentinfo);
+        StartCoroutine(new InformationHolder().Account(InformationHolder.AccountData.Username, PlayerPrefs.GetString("PASSWORD", null)));
+        yield return new WaitUntil(() => InformationHolder.isReady);
 		SceneManager.LoadScene(1);
 	}
 }
